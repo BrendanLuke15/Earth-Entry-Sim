@@ -53,7 +53,7 @@ Conditions = [22,418]; % periapsis and apoapsis altitudes (km)
 % Initial Orbit Angles
 inc = 51.6; % inclination (°)           -> ISS inclination
 RAAN = 127; % (Earth) longitude of ascending node (°)
-w = 165; % argument of periapsis (°)    -> RAAN & w chosen to facilitate landing near Florida from the northwest
+w = 165; % argument of periapsis (°)    -> RAAN & w tuned to facilitate landing near Florida from the northwest
 ```
 
 **Entry Heating & PICA Heat Shield Design:**
