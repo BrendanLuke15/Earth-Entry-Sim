@@ -65,13 +65,13 @@ Estensive leverage of methods from [my work here](https://space.stackexchange.co
   - estimate & integrate ablation rate to find total thickness "lost"
   - 1D unsteady heat flow to determine minimum "insulation thickness" to keep bondline from failing
 
-**Which script to use?**
+# Which script to use?
 
 **EarthEntry2D.m**: For generating quick loading & heating data/plots, vehicle design workshopping, & use with high energy entries (lunar, interplanetary). Example outputs (non-exhaustive):
 
 ![image](https://user-images.githubusercontent.com/31905278/159817886-c78daa2f-e8fa-4679-8122-cfe47ececd25.png)
 
-**EarthEntry3D.m**: For generating quick loading & heating data/plots, vehicle design workshopping, but in*3D*. Example outputs (non-exhaustive):
+**EarthEntry3D.m**: For generating quick loading & heating data/plots, vehicle design workshopping, but in *3D*. Example outputs (non-exhaustive):
 
 ![image](https://user-images.githubusercontent.com/31905278/159818331-62f38a36-7388-4aec-991f-6f8e0aaa84af.png)
 
