@@ -4,6 +4,7 @@
 Some features:
 - Simple atmospheric model from [Braeunig's Rocket & Space Technology](http://www.braeunig.us/space/atmmodel.htm) (US Standard Atmos)
 - 2D & 3D versions
+  - WGS-84 ellipsoid for 3D
 - fixed aerodynamic coefficients
 - 1st order entry heating and heatshield design (PICA)
 
@@ -66,8 +67,14 @@ Estensive leverage of methods from [my work here](https://space.stackexchange.co
 
 **Which script to use?**
 
-|**EarthEntry2D.m**|**EarthEntry3D.m**|**EarthEntry3D_Observation.m**|
-|:-:|:-:|:-:|
-|For generating quick loading & heating data, vehicle design workshopping, & use with high energy entries (lunar, interplanetary)|||
+**EarthEntry2D.m**: For generating quick loading & heating data/plots, vehicle design workshopping, & use with high energy entries (lunar, interplanetary). Example outputs (non-exhaustive):
 
-Heating & trajectory data can also be used to plan observations of 
+![image](https://user-images.githubusercontent.com/31905278/159817886-c78daa2f-e8fa-4679-8122-cfe47ececd25.png)
+
+**EarthEntry3D.m**: For generating quick loading & heating data/plots, vehicle design workshopping, but in*3D*. Example outputs (non-exhaustive):
+
+![image](https://user-images.githubusercontent.com/31905278/159818331-62f38a36-7388-4aec-991f-6f8e0aaa84af.png)
+
+**EarthEntry3D_Observation.m**: For planning/predicting observations of reentering vehicles (like [here](https://space.stackexchange.com/a/58332/40257)). Adds heating rate representation to 3D trajectory plots. It skips outputs/plots of ancilliary trajectory data. Example outputs (non-exhaustive):
+
+![image](https://user-images.githubusercontent.com/31905278/159818762-d3a793fd-1f82-4d09-ac4c-fbdf77ce2516.png)
