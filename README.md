@@ -17,15 +17,32 @@ Configure the mass, geometry, and aerodynamics of the vehicle (point mass). Spac
 % input values: DESIGN
 m = 21200/2.205; % mass of entry vehicle (kg)
 Cd = 1.23; % drag coefficient
-Cl = 0.27*Cd; % lift coefficient                    -> modulated in flight (roll angle), used as constant "fudge factor" in this sim
+Cl = 0.27*Cd; % lift coefficient          -> modulated in flight (roll angle), used as constant "fudge factor" in this sim
 d = 4; % entry vehicle diameter (m)
 S = (d/2)^2*pi(); % ref. area (m^2)
 BC = m/(S*Cd); % ballistic coefficient (kg/m^2)
-Rn = 2; % nose radius (m)                           -> used as a "fudge factor" in this sim for heating calcs
+Rn = 2; % nose radius (m)                 -> used as a "fudge factor" in this sim for heating calcs
 emis = 0.9; % thermal IR emmisivity (0.9 for PICA)
 ```
 
 **Entry Conditions Setup:**
+
+**2D:**
+
+Specify either: apoapsis height & peripsis height OR inertial entry velocity and entry flight path angle.
+
+Example:
+
+```
+type = 'Orbital'; % specify type of entry: 'Orbital' or 'IC' (initial conditions)
+if strcmp(type,'Orbital')
+    Conditions = [22,419]; % periapsis and apoapsis altitudes (km) -> LEO return
+else % initial conditions case
+    Conditions = [-6.45,11.4]; % EFPA (°) and Entry Velocity (km/s) -> Martian direct entry return
+end
+```
+
+**3D:**
 
 Pseudo orbital elements: apoapsis height, peripsis height, inclination, (Earth) longitude of ascending node, argument of peripsis. Again SpaceX Crew Dragon example [here](https://space.stackexchange.com/a/55685/40257) & [here](https://space.stackexchange.com/a/58332/40257):
 
@@ -33,9 +50,9 @@ Pseudo orbital elements: apoapsis height, peripsis height, inclination, (Earth) 
 Conditions = [22,418]; % periapsis and apoapsis altitudes (km)
 
 % Initial Orbit Angles
-inc = 51.6; % inclination (°)                            -> ISS inclination
-RAAN = 127; % (Earth) longitude of ascending node (°)    -> RAAN & w chosen to facilitate landing near Florida from the northwest
-w = 165; % argument of periapsis (°)
+inc = 51.6; % inclination (°)           -> ISS inclination
+RAAN = 127; % (Earth) longitude of ascending node (°)
+w = 165; % argument of periapsis (°)    -> RAAN & w chosen to facilitate landing near Florida from the northwest
 ```
 
 **Entry Heating & PICA Heat Shield Design:**
@@ -47,5 +64,10 @@ Estensive leverage of methods from [my work here](https://space.stackexchange.co
   - estimate & integrate ablation rate to find total thickness "lost"
   - 1D unsteady heat flow to determine minimum "insulation thickness" to keep bondline from failing
 
+**Which script to use?**
+
+|**EarthEntry2D.m**|**EarthEntry3D.m**|**EarthEntry3D_Observation.m**|
+|:-:|:-:|:-:|
+|For generating quick loading & heating data, vehicle design workshopping, & use with high energy entries (lunar, interplanetary)|||
 
 Heating & trajectory data can also be used to plan observations of 
