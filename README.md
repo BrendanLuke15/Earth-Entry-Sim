@@ -58,7 +58,7 @@ w = 165; % argument of periapsis (°)    -> RAAN & w tuned to facilitate landing
 
 **Entry Heating & PICA Heat Shield Design:**
 
-Estensive leverage of methods from [my work here](https://space.stackexchange.com/a/55725/40257). Returns a first order estimate of required stagnation point 1D heatshield thickness. Specific to the PICA material:
+Extensive leverage of methods from [my work here](https://space.stackexchange.com/a/55725/40257). Returns a first order estimate of required stagnation point 1D heatshield thickness. Specific to the PICA material:
 - Calculate Sutton & Graves convective & Martin radiative heating rates
 - assume radiative equilibrium to find thermal environment around vehicle stagnation point
 - use PICA ablation data and thermal properties to:
